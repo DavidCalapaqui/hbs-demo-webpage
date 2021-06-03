@@ -11,24 +11,20 @@ hbs.registerPartials(__dirname + '/views/partials')
 //servir contenio estatico
 app.use(express.static('public'));
 
+const info = {
+    nombre:'David Calapaqui',
+    titulo: 'PRÁCTICA DOCKER'
+}
+
 app.get('/', function(req, res) {
-    res.render('home',{
-        nombre:'David Calapaqui',
-        titulo: 'HANDLEBARS!'
-    });
+    res.render('home',info);
 })
 app.get('/generic', function(req, res) {
-    res.render('generic',{
-        nombre:'David Calapaqui',
-        titulo: 'HANDLEBARS!'
-    });
+    res.render('generic',info);
 })
 
 app.get('/elements', function(req, res) {
-    res.render('elements',{
-        nombre:'David Calapaqui',
-        titulo: 'HANDLEBARS!'
-    });
+    res.render('elements',info);
 })
 
 
